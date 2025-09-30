@@ -39,7 +39,7 @@ block           : '{' expr* '}' ;
 expr	        : ('~'|'^'|'*') expr                                               								# unaryOpValue
 				| expr '\''                                                        								# primeValue
 				| expr '.' expr                                                   								# join 
-                | expr '[' expr (',' expr)* ']'                                  								# box
+                | expr '[' (expr (',' expr)*)? ']'                                  							# box
 				| expr ('<:'|':>') expr                                           								# restrictionValue
 				| expr arrow expr                      															# arrowValue
 				| expr '&' expr                                                   								# intersectionValue
