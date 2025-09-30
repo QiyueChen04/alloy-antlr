@@ -13,6 +13,20 @@ declarations
 arity
 transitive closure
 
+// This is parsed, but fails typechecking
+// This must be a unary set. Instead, its type is 
+// {seq/Int->this/A}
+//pred alwaysTrue3 {
+// 	{t:Bool, sequence: seq A | t.isTrue}.isTrue
+//}
+
+// This is parsed, but fails typechecking
+// This must be a unary set. Instead, its type is 
+// {seq/Int->this/A}
+// fun someSum2 []: Int {
+//	(sum a:Int, b:seq A | a fun/add b )
+// }
+
 `
 StringBuilder sb = new StringBuilder("This cannot be a legal relational join where\nleft hand side is ");
 left.toString(sb, -1);
@@ -45,12 +59,13 @@ sig sExtended extends s {
 - accept '<=' for less or equal to; not documented in book, but CUP accepts it
 - accept trailing commas in 'sigDecl' and 'arguments'
 - added tokens for arithmatic operations, ExprConstant (Alloy AST), WIP, so they are not just 'qname'
-- added the 'until' keyword
+- added the 'until' keyword to the temporal operators
 - added bit shift operators
 - added tokens for 'none', 'univ', 'iden', 'fun/min', 'fun/max', 'fun/next', STRING_LITERAL,
                     'int', 'Int', 'steps'
 - added tokens for 'pred/totalOrder' and 'disj' as a predCall list, not just qname
 - removed the two 'boxValue' rules in 'value'
+- added 'seq' expr as a rule (https://alloytools.org/quickguide/seq.html)
 
 - separated the different uses of the 'multiplicity' keywords, so it's clear what they are being used for from context
 - 'formula' concatenation in 'block': 
