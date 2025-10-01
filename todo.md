@@ -55,7 +55,9 @@ sig sExtended extends s {
 
 
 # changes (some WIP)
-- ( qname '.' ) should be optional in 'funDecl' and 'predDecl'
+- optional ( qname '.' ) in 'funDecl' and 'predDecl'
+- optional qnames inside [] in importDecl
+- optional params in box rule of 'expr'
 - accept '<=' for less or equal to; not documented in book, but CUP accepts it
 - accept trailing commas in 'sigDecl' and 'arguments'
 - added tokens for arithmatic operations, ExprConstant (Alloy AST), WIP, so they are not just 'qname'
@@ -64,8 +66,8 @@ sig sExtended extends s {
 - added tokens for 'none', 'univ', 'iden', 'fun/min', 'fun/max', 'fun/next', STRING_LITERAL,
                     'int', 'Int', 'steps'
 - added tokens for 'pred/totalOrder' and 'disj' as a predCall list, not just qname
-- removed the two 'boxValue' rules in 'value'
 - added 'seq' expr as a rule (https://alloytools.org/quickguide/seq.html)
+- removed the two 'boxValue' rules in 'value'
 
 - separated the different uses of the 'multiplicity' keywords, so it's clear what they are being used for from context
 - 'formula' concatenation in 'block': 
